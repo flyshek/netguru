@@ -1,33 +1,31 @@
-# noddy
+# Netguru: Recriutment Task
+An simple RESTful Service in Node.js + TypeScript as a recriutment task for Netguru. This task should be send back up to **27 August 2020 12:00**.
 
-<!-- [![CircleCI](https://circleci.com/gh/araclx/noddy.svg?style=svg)](https://circleci.com/gh/araclx/noddy) -->
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1b8f21f4da6b445994fab4e9048947d5)](https://www.codacy.com/gh/ARACLX/noddy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ARACLX/noddy&amp;utm_campaign=Badge_Grade)
-
-Noddy is no-code repository boilerplate which implements complete set of linters from @araclx for building TypeScript
-applications.
-
-## Usage
+### Usage
 
 ```bash
 # You don't
 ```
 
-## Contributing
+### Required Endpoints
+- POST /movies:
+  - Based on passed data, other movie details should be fetched from http://www.omdbapi.com/ (or other similar, public movie database) - and saved to application database.
+- GET /movies:
+  - Should fetch list of all movies already present in application database.
+- POST /comments:
+  - Comment should be saved to application database
+- GET /comments:
+  - Should fetch list of all comments present in application database.
 
-The main purpose of this repository is to continue to evolve advanced boilerplate of new applications, making it faster
-and easier to use. Development of Aeropods happens in the open on GitHub, and we are grateful to the community for
-contributing bugfixes and improvements. Read below to learn how you can take part in improving Aeropods.
-
-### [Code of Conduct](./CODE_OF_CONDUCT.md)
-
-ARACLX Corp. has adopted a Code of Conduct that we expect project participants to adhere. Please read it so that you can
-understand what actions will and will not be tolerated.
-
-### [Contributing Guide](./CONTRIBUTING.md)
-
-Read our contributing guide to learn about our development process how to propose bugfixes and improvements to build and
-test your changes to Aeropods.
+### Rules and Hints
+- Please consider those requirements as basic. We value a good code structure or additional functionalities.
+- During implementing the assignment use many different and appropriate layers (i.e. middleware), design patterns (i.e. serializers), and so on.
+- Don’t forget to test appropriate amount of code.
+- Usage of latest ECMAScript/TypeScript standard and features is encouraged.
+- The application's code should be kept in a public repository so that we can read it, pull it and build it ourselves. Remember to include README file or at least basic notes on application requirements and setup - we should be able to easily and quickly get it running.
+- Please dockerize your application.
+- Written application must be hosted and publicly available for us online - we recommend Heroku.
 
 ## License
 
-[MIT](./LICENSE) @ ARACLX
+[MIT](./LICENSE) @ Jakub Olan
