@@ -31,7 +31,11 @@ test.afterEach(function (t) {
 })
 
 test.serial('POST /movies should search through 3rd-party API', async (t) => {
-	const internalRequest: MovieSearchResponse = await got
+	const internalRequest: {
+		results: number
+		availablePages: number
+		data: Array<omdbMovie>
+	} = await got
 		.post('movies', {
 			prefixUrl: t.context.prefixUrl,
 			json: {

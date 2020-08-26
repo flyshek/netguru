@@ -25,12 +25,6 @@ const logger = signale.scope('movies')
 
 if (NODE_ENV === 'CI' || NODE_ENV === 'production') logger.disable()
 
-export interface MovieSearchResponse {
-	results: number
-	availablePages: number
-	data: Array<omdbMovie>
-}
-
 export class MovieRouter {
 	public controller: MovieController = new MovieController()
 	public router: Router = Router()
