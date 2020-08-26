@@ -1,0 +1,17 @@
+{
+	// @araclx/tsconfig is some kind of standard that I'm using in most of my
+	// applications, there I've disabled some strict checking because it's all
+	// covered with my linter.
+	"extends": "@araclx/tsconfig",
+	"compilerOptions": {
+		"target": "ES2018",
+		"lib": ["ES2018"],
+		"baseUrl": "./src",
+		"paths": {
+			"@netguru/movies": ["movies/index.ts"],
+			"@netguru/comments": ["comments/index.ts"],
+			"@netguru/env": ["utils/env.ts"],
+			"@netguru/server": ["index.ts"]
+		}
+	}
+}

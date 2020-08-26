@@ -1,1 +1,3 @@
-module.exports = require('@araclx/xo-config')
+module.exports = {
+	...require('@araclx/xo-config'),
+}
