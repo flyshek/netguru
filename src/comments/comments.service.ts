@@ -1,5 +1,3 @@
-// Generallly I would spit this on controller and router but that's useless in
-// this case.
 import signale from 'signale'
 import { Request, Response, Router } from 'express'
 import { Comment } from './comment.model'
@@ -11,12 +9,12 @@ class CommentController {
 	/**
 	 * Create new comment in database with is related to Movie model.
 	 */
-	async createOne(req: Request, res: Response) {
-		const newComment = new Comment(req.body)
+	async createOne(request: Request, reply: Response) {
+		const newComment = new Comment(request.body)
 		const createdComment = await newComment.save()
 
 		await Movie.findOneAndUpdate(
-			{ _id: req.body.movie },
+			{ _id: request.body.movie },
 			{
 				$push: {
 					comments: createdComment._id,
@@ -27,27 +25,29 @@ class CommentController {
 			}
 		)
 
-		res.json({ data: createdComment })
+		reply.json({ data: createdComment })
 	}
 
 	/** Get all comments available in database. */
-	async getAll(req: Request, res: Response) {
+	async getAll(request: Request, reply: Response) {
 		let comments
 
 		try {
 			comments = await Comment.find()
-		} catch (e) {
-			res.json(`Error: ${e}`)
+		} catch (error) {
+			reply.json(`Error: ${error}`)
 		}
 
-		res.json({ data: comments })
+		reply.json({ data: comments })
 	}
 }
 
 export class CommentRouter {
 	public controller: CommentController = new CommentController()
+	/* eslint-disable-next-line new-cap */
 	public router: Router = Router()
 
+	/* eslint-disable-next-line @typescript-eslint/no-unused-expressions */
 	constructor() {
 		this.router
 		this.routes()
