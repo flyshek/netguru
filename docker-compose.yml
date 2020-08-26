@@ -1,0 +1,25 @@
+# I was not sure about production docker-compose, so I'll create a local-focused
+# configuration with having on mind that production configuration was out of
+# scope.
+
+version: '3.8'
+
+services:
+  # Database creditinals are contained in Heroku's environment, there I've used
+  # simple local instance of database, there is also no need to put connection
+  # URL in .env
+  mongodb:
+    container_name: netguru-mongodb
+    image: mongo # In production tag should be specified.
+    ports:
+      - 27017:27017
+  # I'm not sure also about putting there my Node.js application, so I'll just
+  # implement this and leave that commented.
+  # api:
+  #   container_name: netguru-api
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   image: ziqiln/netguru:latest
+  #   ports:
+  #     - 3600:3600
