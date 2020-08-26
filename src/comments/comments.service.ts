@@ -8,6 +8,9 @@ import { Movie } from '../movies/movie.model'
 const logger = signale.scope('comments')
 
 class CommentController {
+	/**
+	 * Create new comment in database with is related to Movie model.
+	 */
 	async createOne(req: Request, res: Response) {
 		const newComment = new Comment(req.body)
 		const createdComment = await newComment.save()
@@ -27,6 +30,7 @@ class CommentController {
 		res.json({ data: createdComment })
 	}
 
+	/** Get all comments available in database. */
 	async getAll(req: Request, res: Response) {
 		let comments
 

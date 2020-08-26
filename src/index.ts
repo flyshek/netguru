@@ -6,10 +6,12 @@ import morgan from 'morgan'
 import mongoose from 'mongoose'
 import errorHandler from 'errorhandler'
 
-import { HOST, isDevelopment, NODE_ENV, PORT, MONGODB_URI } from '@netguru/env'
+import { HOST, isDevelopment, NODE_ENV, PORT, MONGODB_URI, isProduction } from '@netguru/env'
 
 import { MovieRouter } from '@netguru/movies'
 import { CommentRouter } from '@netguru/comments'
+
+import { logger } from './middleware/winston.middleware'
 
 // TBH, I don't know which technology stack you expected, so I'll use my
 // personal prefereneces (not at all, but in general). Why you're doing that on
@@ -61,6 +63,7 @@ export class Main {
 		this.app.use(express.urlencoded({ extended: false }))
 		this.app.use(cors())
 		this.app.use(compression())
+		if (isProduction) this.app.use(logger)
 		if (isDevelopment) this.app.use(morgan('dev'))
 		if (isDevelopment) this.app.use(errorHandler())
 	}

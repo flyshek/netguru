@@ -1,8 +1,7 @@
 import winston from 'winston'
+import expressWinston from 'express-winston'
 
-export const logger = winston.createLogger({
-	level: 'info',
-	format: winston.format.json(),
+export const logger = expressWinston.logger({
 	transports: [
 		new winston.transports.File({
 			filename: 'error.log',
@@ -11,5 +10,10 @@ export const logger = winston.createLogger({
 		new winston.transports.File({
 			filename: 'combined.log',
 		}),
+		new winston.transports.Console(),
 	],
+	format: winston.format.combine(winston.format.colorize(), winston.format.json()),
+	meta: true,
+	msg: 'HTTP {{req.method}} {{req.url}}',
+	expressFormat: true,
 })
