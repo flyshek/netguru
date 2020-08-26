@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { isDevelopmentCheck } from './helpers'
+import { isDevelopmentCheck, isProductionCheck } from './helpers'
 
 dotenv.config()
 
@@ -14,3 +14,4 @@ export const MONGODB_URI = process.env.MONGODB_URI! || 'mongodb://localhost'
 
 // ENV-based Lifecycle Variables
 export const isDevelopment = isDevelopmentCheck()
+export const isProduction = isProductionCheck()

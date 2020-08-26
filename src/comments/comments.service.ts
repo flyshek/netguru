@@ -9,8 +9,21 @@ const logger = signale.scope('comments')
 
 class CommentController {
 	async createOne(req: Request, res: Response) {
-		const newComment = new Comment(req.body).populate('Movie')
+		const newComment = new Comment(req.body)
 		const createdComment = await newComment.save()
+
+		await Movie.findOneAndUpdate(
+			{ _id: req.body.movie },
+			{
+				$push: {
+					comments: createdComment._id,
+				},
+			},
+			{
+				useFindAndModify: true,
+			}
+		)
+
 		res.json({ data: createdComment })
 	}
 
@@ -18,7 +31,7 @@ class CommentController {
 		let comments
 
 		try {
-			comments = await Comment.find().populate('Movie')
+			comments = await Comment.find()
 		} catch (e) {
 			res.json(`Error: ${e}`)
 		}

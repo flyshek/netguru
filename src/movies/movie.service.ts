@@ -4,7 +4,7 @@
 // router class into one file since splitting them will introduce just more mess.
 
 import { Request, Response, Router } from 'express'
-import { Movie, IMovie } from './movie.model'
+import { Movie } from './movie.model'
 
 // I using 'got' library since commonly used 'request' is no logner maintained,
 // idk why people are still using it.
@@ -14,7 +14,7 @@ import signale from 'signale'
 
 // There are some types for responses from omdb, since this simplifies my
 // workflow a lot.
-import { omdbResponse, omdbMovie } from './omdb.interface'
+import { omdbResponse } from './omdb.interface'
 import { NODE_ENV } from '@netguru/env'
 
 const logger = signale.scope('movies')
@@ -36,6 +36,7 @@ export class MovieRouter {
 
 	private routes() {
 		this.router.get('/', this.controller.getAll)
+		this.router.get('/:id', this.controller.getMovie)
 		this.router.post('/', this.controller.createOne)
 	}
 }
@@ -87,7 +88,7 @@ class MovieController {
 				// Search for movie in database using created index on imdbID.
 				const searchMovieInDatabase = await Movie.findOne({ imdbID: movie.imdbID })
 
-				if (searchMovieInDatabase == null) {
+				if (searchMovieInDatabase === null) {
 					const newMovie = new Movie(movie)
 					await newMovie
 						.save()
@@ -116,8 +117,16 @@ class MovieController {
 		}
 	}
 
+	async getMovie(request: Request, reply: Response) {
+		const movie = await Movie.findOne({ _id: request.params.id }).populate('comments')
+
+		reply.json({
+			data: movie,
+		})
+	}
+
 	async getAll(req: Request, res: Response) {
-		const movies = await Movie.find().populate('Comment').exec()
+		const movies = await Movie.find().populate('comments')
 		res
 			.json({
 				data: movies,

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/array-type */
+
 import mongoose from 'mongoose'
 import { IComment } from '../comments/comment.model'
 
@@ -18,7 +21,6 @@ const movieSchema = new mongoose.Schema({
 		unique: true,
 	},
 	Poster: String,
-	// Idk, one-to-many is good solution there, probably you mean one-to-one.
 	comments: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
