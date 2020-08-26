@@ -26,7 +26,7 @@ builder called `craftpack`, generally I'm using it with nodemon to save some tim
 $ git clone https://github.com/ZiQiLN/netguru.git netguru
 $ cd netguru && yarn
 $ docker-compose -f "docker-compose.yml" up -d --build
-$ yarn test
+$ yarn test # I probably will imporove that part
 $ yarn start # Optionally you can build application with yarn build to run app with Node.
 # Your application is running on http://localhost:3600
 ```

@@ -8,7 +8,7 @@ import got from 'got'
 
 // Create basic testing context with Main Class and exported express instance.
 import { Main } from '@netguru/server'
-import { omdbResponse, MovieSearchResponse } from '@netguru/movies'
+import { omdbResponse } from '@netguru/movies'
 import { omdbMovie } from 'movies/omdb.interface'
 import { IMovie } from 'movies/movie.model'
 const { app } = new Main()
