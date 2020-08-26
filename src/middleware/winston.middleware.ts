@@ -1,14 +1,17 @@
 import winston from 'winston'
 import expressWinston from 'express-winston'
+import path from 'path'
 
 export const logger = expressWinston.logger({
 	transports: [
 		new winston.transports.File({
 			filename: 'error.log',
 			level: 'error',
+			dirname: path.join(__dirname, '..', '..', 'logs'),
 		}),
 		new winston.transports.File({
 			filename: 'combined.log',
+			dirname: path.join(__dirname, '..', '..', 'logs'),
 		}),
 		new winston.transports.Console(),
 	],
