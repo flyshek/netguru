@@ -43,9 +43,18 @@ docker-compose@1.26.2
 
 ### Documentation
 
-Documentation was useless for this project as I've said upper, but when I'll have some more time I'll create it.
+There is prepared
+[Postman Documentation](https://documenter.getpostman.com/view/7188078/TVCZZAzf#67303641-9acd-41ed-8ad0-885f591d57f5)
+which will introduce your to all available requests and how to use them.
 
-I've implemented some tests, but they aren't much accurate.
+### Docker
+
+> TODO: Documentation on building and pulling from DockerHub
+
+#### Tests
+
+You can check actual code with `yarn test` or `yarn coverage`. I'm putting here coverage report from tests, at fact they
+aren't much accurate but they exist.
 
 ```
 ----------------------|---------|----------|---------|---------|---------------------------------
