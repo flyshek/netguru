@@ -66,16 +66,9 @@ export class Main {
 	}
 
 	private routing() {
-		// I really like usage of subrouters, that's cool.
-		this.app.get('/', (req, res) => {
-			res.json('Hello Netguru!').status(200)
-		})
 		this.app.use('/movies', new MovieRouter().router)
 		this.app.use('/comments', new CommentRouter().router)
 	}
-
-	// Yup! I've stealed code from my other project.
-	// https://github.com/araclx/humantic/blob/master/services/api/src/http.ts
 
 	private async database() {
 		// Implementation of scoped logger, disabled in testing.

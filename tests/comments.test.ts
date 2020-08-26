@@ -24,7 +24,7 @@ test.afterEach(function (t) {
 	t.context.server.close()
 })
 
-test.serial('POST /comment should create new entry', async (t) => {})
-test.serial('POST /comment should return status 200', async (t) => {})
-test.serial('GET /comment should return created comments', async (t) => {})
-test.serial('GET /comment should return status 200', async (t) => {})
+test.serial.todo('POST /comment should create new entry')
+test.serial.todo('POST /comment should return status 200')
+test.serial.todo('GET /comment should return created comments')
+test.serial.todo('GET /comment should return status 200')

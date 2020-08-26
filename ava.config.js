@@ -1,6 +1,6 @@
 const configuration = {
 	files: ['tests/**/*'],
-	failFast: true,
+	failFast: false,
 	failWithoutAssertions: false,
 	verbose: false,
 	concurrency: 2,
