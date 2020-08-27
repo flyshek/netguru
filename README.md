@@ -3,10 +3,7 @@
 I've decided to build this project on [Express]() and [TypeScript]() because I was unsure about [Fastify]() usage,
 additionally I was unsure for database so I've most common solution for Node.js application - [MongoDB]().
 
-> I was thinking about creation of Postman documentation for that API but I've realized that was out of scope and you
-> provided informations about routers so you have documentation already.
-
-> I hope Netguru like spaggetti <3
+> I hope you like spaggetti <3, P.S. My linter has issues when I've started developing repository and style of latests changes may differ than older ones.
 
 ### Usage
 
