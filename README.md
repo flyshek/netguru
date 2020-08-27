@@ -3,14 +3,6 @@
 I've decided to build this project on [Express]() and [TypeScript]() because I was unsure about [Fastify]() usage,
 additionally I was unsure for database so I've most common solution for Node.js application - [MongoDB]().
 
-An simple RESTful Service in Node.js + TypeScript as a recriutment task for Netguru. This task should be send back up to
-**27 August 2020 12:00**.
-
-> This repository using sort of my configurations, since I'm using my no-code boilerplate with all of my linters and
-> other things. I also know you guys expecting DDD implementation on this project, but hell no! I've included in my code
-> some thoughts from mind, but I'm sure that don't have much influence - simplify you can just ingore them, the
-> important ones are in JSDOC.
-
 > I was thinking about creation of Postman documentation for that API but I've realized that was out of scope and you
 > provided informations about routers so you have documentation already.
 
@@ -26,8 +18,8 @@ builder called `craftpack`, generally I'm using it with nodemon to save some tim
 $ git clone https://github.com/ZiQiLN/netguru.git netguru
 $ cd netguru && yarn
 $ docker-compose -f "docker-compose.yml" up -d --build
-$ yarn test # I probably will imporove that part
-$ yarn start # Optionally you can build application with yarn build to run app with Node.
+$ yarn test # Better avoid this cringe
+$ yarn start
 # Your application is running on http://localhost:3600
 ```
 
@@ -49,12 +41,13 @@ which will introduce your to all available requests and how to use them.
 
 ### Docker
 
-> TODO: Documentation on building and pulling from DockerHub
+Docker image is availabe on Dockerhub as `ziqiln/netguru:latest`, feel free to pull and run, it will use default port
+(`3600`).
 
 #### Tests
 
 You can check actual code with `yarn test` or `yarn coverage`. I'm putting here coverage report from tests, at fact they
-aren't much accurate but they exist.
+aren't much accurate but they exist - I'm not best at writting tests.
 
 ```
   4 tests passed
