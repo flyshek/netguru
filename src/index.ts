@@ -8,10 +8,10 @@ import morgan from 'morgan'
 import mongoose from 'mongoose'
 import errorHandler from 'errorhandler'
 
-import { HOST, isDevelopment, NODE_ENV, PORT, MONGODB_URI, isProduction } from '@netguru/env'
+import { HOST, isDevelopment, NODE_ENV, PORT, MONGODB_URI, isProduction } from '@keinsell/env'
 
-import { MovieRouter } from '@netguru/movies'
-import { CommentRouter } from '@netguru/comments'
+import { MovieRouter } from '@keinsell/movies'
+import { CommentRouter } from '@keinsell/comments'
 
 import { logger } from './middleware/winston.middleware'
 

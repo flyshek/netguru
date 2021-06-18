@@ -10,7 +10,7 @@ const NodemonPlugin = require('nodemon-webpack-plugin')
 // configuration for TypeScript Node applications.
 
 // P.S. Craftpack is my early library, just saving some time.
-// https://github.com/ziqiln/craftpack
+// https://github.com/keinsell/craftpack
 
 module.exports = configure({
 	output: {

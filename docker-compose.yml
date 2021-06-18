@@ -9,7 +9,7 @@ services:
   # simple local instance of database, there is also no need to put connection
   # URL in .env
   mongodb:
-    container_name: netguru-mongodb
+    container_name: keinsell-mongodb
     image: mongo # In production tag should be specified.
     ports:
       - 27017:27017

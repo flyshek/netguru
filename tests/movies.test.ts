@@ -6,7 +6,7 @@ import http from 'http'
 import got from 'got'
 import listen from 'test-listen'
 
-import { Main } from '@netguru/server'
+import { Main } from '@keinsell/server'
 import { omdbMovie, omdbResponse } from 'movies/omdb.interface'
 import { IMovie, Movie } from 'movies/movie.model'
 

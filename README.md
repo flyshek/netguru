@@ -1,9 +1,7 @@
-# Netguru: Recriutment Task
+# DoNotHireMe
 
-I've decided to build this project on [Express]() and [TypeScript]() because I was unsure about [Fastify]() usage,
-additionally I was unsure for database so I've most common solution for Node.js application - [MongoDB]().
-
-> I hope you like spaggetti <3, P.S. My linter has issues when I've started developing repository and style of latests changes may differ than older ones.
+An sample application (idea was provided previously by Netguru) which is application from exploring movies from external
+site. I additionally added authentication to this application for Fireart recrutation.
 
 ### Usage
 
@@ -12,10 +10,10 @@ doesn't differ much from `tsc` but I prefer output in single file. `start` comma
 builder called `craftpack`, generally I'm using it with nodemon to save some time on repo setup.
 
 ```bash
-$ git clone https://github.com/ZiQiLN/netguru.git netguru
-$ cd netguru && yarn
+$ git clone https://github.com/keinsell/hireme.git keinsell
+$ cd keinsell && yarn
 $ docker-compose -f "docker-compose.yml" up -d --build
-$ yarn test # Better avoid this cringe
+$ yarn test
 $ yarn start
 # Your application is running on http://localhost:3600
 ```

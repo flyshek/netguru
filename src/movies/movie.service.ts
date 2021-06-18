@@ -15,7 +15,7 @@ import signale from 'signale'
 // There are some types for responses from omdb, since this simplifies my
 // workflow a lot.
 import { omdbResponse } from './omdb.interface'
-import { NODE_ENV } from '@netguru/env'
+import { NODE_ENV } from '@keinsell/env'
 
 const logger = signale.scope('movies')
 

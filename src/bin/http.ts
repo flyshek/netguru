@@ -1,5 +1,3 @@
-import { Main } from '@netguru/server'
-
-// This file don't need explain, just an entryfile.
+import { Main } from '@keinsell/server'
 
 new Main().listen()

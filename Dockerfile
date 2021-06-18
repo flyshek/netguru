@@ -36,6 +36,3 @@ USER node
 EXPOSE 3600/tcp
 ENTRYPOINT ["node"]
 CMD [ "dist/index.js" ]
-
-# Yeah, I've copied this file from my another repository, since Node.js build
-# workflow looks almost same for every single application.

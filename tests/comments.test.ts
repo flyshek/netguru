@@ -4,7 +4,7 @@ import listen from 'test-listen'
 import got from 'got'
 
 // Create basic testing context with Main Class and exported express instance.
-import { Main } from '@netguru/server'
+import { Main } from '@keinsell/server'
 const { app } = new Main()
 
 // Interface for types in our tests
