@@ -54,10 +54,12 @@
 		"dotenv": "^8.2.0",
 		"errorhandler": "^1.5.1",
 		"express": "^4.17.1",
+		"express-session": "^1.17.2",
 		"express-winston": "^4.0.5",
 		"got": "^11.5.2",
 		"mongoose": "^5.10.0",
 		"morgan": "^1.10.0",
+		"passport-local": "^1.0.0",
 		"signale": "^1.4.0",
 		"winston": "^3.3.3"
 	}
